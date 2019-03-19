@@ -20,10 +20,22 @@ def new_password():
     password_list.append(website_entry)
     print (password_list)
 
+
+def find_password():
+    looked_for_website = input('what website is it for? ')
+    for entry in password_list:
+       found_website= entry.get('website')
+       if found_website == looked_for_website:
+          print(entry.password)
+       else:
+          print("Website doesn't exit")
+
+
+
 while True:
     print('''
     Welcome to the password manager ya dingus.
-    Thyp "new" to create a new password.
+    Type "new" to create a new password.
     Type "show" to look up a password.
     ''')
 
@@ -31,7 +43,7 @@ while True:
     if user_choice == 'new':
         pass
     elif user_choice == 'show':
-        pass
+        find_password
     else:
         print("Hwat?? That didn't compute ")
     
