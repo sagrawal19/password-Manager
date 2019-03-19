@@ -24,11 +24,13 @@ def new_password():
 def find_password():
     looked_for_website = input('what website is it for? ')
     for entry in password_list:
-       found_website= entry.get('website')
-       if found_website == looked_for_website:
-          print(entry.password)
-       else:
-          print("Website doesn't exit")
+       if looked_for_website == entry['website']:
+           print(entry['username'])
+           print(entry['password'])
+           break
+       
+       
+    print("Website doesn't exit")
 
 
 
@@ -41,9 +43,9 @@ while True:
 
     user_choice = input('Whatcha wanna do?')
     if user_choice == 'new':
-        pass
+        new_password()
     elif user_choice == 'show':
-        find_password
+        find_password()
     else:
         print("Hwat?? That didn't compute ")
     
